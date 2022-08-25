@@ -13,6 +13,13 @@ books.forEach(function (book) {
 
 const bookList = document.querySelector("#book-list");
 console.log("The parent node is:", bookList.parentNode);
+console.log("The book-list next sibling is:", bookList.nextSibling);
+console.log("The book-list next element sibling is:", bookList.nextElementSibling);
+console.log("The book-list previous sibling is:", bookList.previousSibling);
+console.log("The book-list previous element sibling is:", bookList.previousElementSibling);
+
+
+
 
 //makes an array from an html collection
 Array.from(titles).forEach(function (item) {
