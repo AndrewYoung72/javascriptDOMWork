@@ -31,11 +31,22 @@ Array.from(titles).forEach(function (item) {
 });
 
 
-const btns = document.querySelectorAll("#book-list .delete");
+//delete books
+const btns = document.querySelector("#book-list ul");
 
-Array.from(btns).forEach(function(btn) {
-  btn.addEventListener("click", function(e) {
-    const li = e.target.parentElement;
-    li.parentNode.removeChild(li);
-  })
+btns.addEventListener("click", function(e) {
+  if(e.target.className == "delete") {
+    const li = e.target.parentNode;
+    btns.removeChild(li);
+  }
+})
+
+// Add book
+const addBook = document.querySelector("#add-book");
+
+addBook.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const value = addBook.querySelector("input", "text").value;
+  console.log(value);
 })
