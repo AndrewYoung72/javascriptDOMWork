@@ -19,7 +19,7 @@ console.log("The book-list previous sibling is:", bookList.previousSibling);
 console.log("The book-list previous element sibling is:", bookList.previousElementSibling);
 
 //previous sibling grabs the header and += adds hell there to the header
-bookList.previousElementSibling.querySelector("p").innerHTML += "<br/>Hello there!";
+// bookList.previousElementSibling.querySelector("p").innerHTML += "<br/>Hello there!";
 //replaces the header with new content
 // bookList.previousElementSibling.querySelector("p").textContent = "oh Shit!";
 
@@ -62,6 +62,9 @@ bookName.textContent = value;
 li.appendChild(bookName);
 li.appendChild(deleteBtn);
 list.appendChild(li);
+//Adds classes
+bookName.classList = "name";
+deleteBtn.classList = "delete";
 
 
 })
