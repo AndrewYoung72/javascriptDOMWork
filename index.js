@@ -32,12 +32,12 @@ Array.from(titles).forEach(function (item) {
 
 
 //delete books
-const btns = document.querySelector("#book-list ul");
+const list = document.querySelector("#book-list ul");
 
-btns.addEventListener("click", function(e) {
+list.addEventListener("click", function(e) {
   if(e.target.className == "delete") {
     const li = e.target.parentNode;
-    btns.removeChild(li);
+    list.removeChild(li);
   }
 })
 
@@ -49,4 +49,20 @@ addBook.addEventListener("submit", function(e) {
 
   const value = addBook.querySelector("input", "text").value;
   console.log(value);
+
+  //create element
+const li = document.createElement("li");
+const bookName = document.createElement("span");
+const deleteBtn = document.createElement("span");
+
+//Add textContent
+deleteBtn.textContent = "delete";
+bookName.textContent = value;
+//Append to DOM
+li.appendChild(bookName);
+li.appendChild(deleteBtn);
+list.appendChild(li);
+
+
 })
+
