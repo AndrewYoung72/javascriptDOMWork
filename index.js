@@ -18,12 +18,24 @@ console.log("The book-list next element sibling is:", bookList.nextElementSiblin
 console.log("The book-list previous sibling is:", bookList.previousSibling);
 console.log("The book-list previous element sibling is:", bookList.previousElementSibling);
 
+//previous sibling grabs the header and += adds hell there to the header
+bookList.previousElementSibling.querySelector("p").innerHTML += "<br/>Hello there!";
+//replaces the header with new content
+// bookList.previousElementSibling.querySelector("p").textContent = "oh Shit!";
 
 
 
 //makes an array from an html collection
 Array.from(titles).forEach(function (item) {
-  console.log(item);
+  console.log(item.textContent);
 });
 
 
+const btns = document.querySelectorAll("#book-list .delete");
+
+Array.from(btns).forEach(function(btn) {
+  btn.addEventListener("click", function(e) {
+    const li = e.target.parentElement;
+    li.parentNode.removeChild(li);
+  })
+})
