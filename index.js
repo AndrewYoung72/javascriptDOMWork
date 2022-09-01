@@ -81,3 +81,17 @@ hideBox.addEventListener("change", function(e) {
     list.style.display = "initial";
   }
 })
+
+//Filtering books 
+const searchBar = document.querySelector("#search-books");//grabs the form id
+searchBar.addEventListener("keyup", function(e) {
+  const term = e.target.value.toLowerCase();
+  books.forEach(function(book) {
+    const title = book.textContent;
+    if(title.toLowerCase().indexOf(term) != -1) {
+        book.style.display = "block";
+    } else {
+      book.style.display = "none";
+    }
+  })
+})
