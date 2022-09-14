@@ -1,12 +1,18 @@
-const golfBag = {
+const bag = {
   clubNumber: 14,
-  clubList: ["Driver", "3H", "3 Iron", "4 Iron", "5 Iron", "6 Iron","7 Iron","8 Iron","9 Iron","PW", "50°W", "54°W", "58°W", "Putter"],
+  clubList: ["Driver: X Tour", "2H: 18° X Hot ", "3 Iron", "4 Iron", "5 Iron", "6 Iron","7 Iron","8 Iron","9 Iron","PW", "50°W: JAWS 10s", "54°W: MackDaddy 12w", "58°W: JAWS 8c", "Putter: Odyssey 2-Ball XDF"],
   clubBrand: "Callaway",
   golfTowel: true,
   tees: true,
   balls: true,
-  ballBrand: "Callaway",
+  ballBrand: "Callaway, Titleist",
+  drawClub : () => {
+     return bag.clubList[Math.floor(Math.random() * bag.clubList.length)];
+  },
+  
 };
+
+
 
 const markup = (bag) => {
   return `
@@ -30,16 +36,17 @@ const markup = (bag) => {
         <li>${bag.clubList[13]}</li>
       </ul>
       <h3>Ball Brand: ${bag.ballBrand}</h3>
+      <h3>Random club selection:  ${bag.drawClub()}</h3>
     </div>
 
 
   `;
 };
 
-console.log(golfBag);
-console.log(golfBag.clubList[1]);
+console.log(bag);
+
 
 
 const main = document.createElement("main");
-main.innerHTML = markup(golfBag);
+main.innerHTML = markup(bag);
 document.body.appendChild(main);
