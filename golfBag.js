@@ -49,5 +49,5 @@ console.log(bag.drawClub());
 
 
 const main = document.createElement("main");
-main.textContent = `${bag.ballBrand}`
+main.textContent = `${bag.clubBrand}`
 document.body.appendChild(main);
